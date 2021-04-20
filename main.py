@@ -1,15 +1,20 @@
 #This program automates the CUNYfirst Global Search
 
-import prefixtosubject
-import crawl
+import crawl  # python script to navigate CUNY's Course directory
+import prefixtosubject  # python script to convert the course prefix to the subject (needed to access course directory)
 
-#user inputs course
-course = input('Enter Course: ')
-string = course.split()
-number = string[1]
-flag = 0
 
-#get the subject from the prefix
-subject = prefixtosubject.findSubject(string[0].upper())
+def main():
+  #user inputs course
+  course = input('Enter Course: ')
+  string = course.split()
+  number = string[1]
 
-crawl.getInfo(subject, course.upper())
+  #get the subject from the prefix
+  subject = prefixtosubject.findSubject(string[0].upper())
+
+  print('Starting driver...')
+  crawl.getInfo(subject, course.upper())
+
+if __name__ == '__main__':
+  main()
