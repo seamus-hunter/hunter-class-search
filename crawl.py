@@ -53,7 +53,7 @@ def getInfo(subject, course):
 
   #reveal class information (this section can be optimised)
   index = 0
-  while index < 50:
+  while index < 62:
     id = 'imageDivLink' + str(index)
     try:
       element = driver.find_element_by_id(id)
